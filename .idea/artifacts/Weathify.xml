@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Weathify">
+    <output-path>$PROJECT_DIR$/../bw-serv/plugins</output-path>
+    <root id="archive" name="Weathify.jar">
+      <element id="module-output" name="weathify" />
+      <element id="dir-copy" path="$PROJECT_DIR$/src/main/resources" />
+    </root>
+  </artifact>
+</component>

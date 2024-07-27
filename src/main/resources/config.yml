@@ -1,0 +1,14 @@
+format:
+  prefix: "&9&lWeathify"
+  separator: " &7\u27BD "
+messages:
+  time:
+    day: "The sun is shining brightly now!"
+    night: "The night has fallen and the stars are out."
+    reset: "The time has been reset to the server's default."
+  weather:
+    clear: "The skies have cleared up nicely!"
+    rain: "The rain is pouring down now."
+    reset: "The weather has been reset to the server's default."
+  errors:
+    non-player: "Must be a player to do that."

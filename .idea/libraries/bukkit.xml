@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="bukkit">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../bw-serv/cache/patched_1.8.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../bw-serv/cache/patched_1.8.8.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,20 @@
+name: Weathify
+version: 1.0
+main: com.zelevar.weathify.Weathify
+description: A powerful plugin that lets players customize their client-side time and weather.
+author: zelevar
+website: https://github.com/zelevar
+commands:
+  ptime:
+    description: Set your personal time.
+    usage: "§cUsage: /ptime <day|night|reset>"
+    permission: weathify.time
+  pweather:
+    description: Set your personal weather.
+    usage: "§cUsage: /pweather <clear|rain|reset>"
+    permission: weathify.weather
+permissions:
+  weathify.time:
+    default: true
+  weathify.weather:
+    default: true
