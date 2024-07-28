@@ -18,7 +18,7 @@ public class Weathify extends JavaPlugin {
             Player player = (Player) sender;
 
             String subCommand = "";
-            if (args.length > 0) subCommand = args[0];
+            if (args.length > 0) subCommand = args[0].toLowerCase();
 
             switch (command.getName().toLowerCase()) {
                 case "ptime":
@@ -34,7 +34,7 @@ public class Weathify extends JavaPlugin {
     }
 
     private boolean setPlayerTime(Player player, String time) {
-        switch (time.toLowerCase()) {
+        switch (time) {
             case "day":
                 player.setPlayerTime(1000L, false);
                 player.sendMessage(format("messages.time.day"));
@@ -55,7 +55,7 @@ public class Weathify extends JavaPlugin {
     }
 
     private boolean setPlayerWeather(Player player, String weather) {
-        switch (weather.toLowerCase()) {
+        switch (weather) {
             case "clear":
                 player.setPlayerWeather(WeatherType.CLEAR);
                 player.sendMessage(format("messages.weather.clear"));
