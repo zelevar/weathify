@@ -22,9 +22,9 @@ public class Weathify extends JavaPlugin {
 
             switch (command.getName().toLowerCase()) {
                 case "ptime":
-                    return handlePTimeCommand(player, subCommand);
+                    return setPlayerTime(player, subCommand);
                 case "pweather":
-                    return handlePWeatherCommand(player, subCommand);
+                    return setPlayerWeather(player, subCommand);
             }
         } else {
             sender.sendMessage(format("messages.errors.non-player"));
@@ -33,8 +33,8 @@ public class Weathify extends JavaPlugin {
         return true;
     }
 
-    private boolean handlePTimeCommand(Player player, String subCommand) {
-        switch (subCommand.toLowerCase()) {
+    private boolean setPlayerTime(Player player, String time) {
+        switch (time.toLowerCase()) {
             case "day":
                 player.setPlayerTime(1000L, false);
                 player.sendMessage(format("messages.time.day"));
@@ -54,8 +54,8 @@ public class Weathify extends JavaPlugin {
         return true;
     }
 
-    private boolean handlePWeatherCommand(Player player, String subCommand) {
-        switch (subCommand.toLowerCase()) {
+    private boolean setPlayerWeather(Player player, String weather) {
+        switch (weather.toLowerCase()) {
             case "clear":
                 player.setPlayerWeather(WeatherType.CLEAR);
                 player.sendMessage(format("messages.weather.clear"));
