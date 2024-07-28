@@ -22,46 +22,54 @@ public class Weathify extends JavaPlugin {
 
             switch (command.getName().toLowerCase()) {
                 case "ptime":
-                    switch (subCommand.toLowerCase()) {
-                        case "day":
-                            player.setPlayerTime(1000L, false);
-                            player.sendMessage(format("messages.time.day"));
-                            break;
-                        case "night":
-                            player.setPlayerTime(13000L, false);
-                            player.sendMessage(format("messages.time.night"));
-                            break;
-                        case "reset":
-                            player.resetPlayerTime();
-                            player.sendMessage(format("messages.time.reset"));
-                            break;
-                        default:
-                            return false;
-                    }
-
-                    break;
+                    return setPlayerTime(player, subCommand);
                 case "pweather":
-                    switch (subCommand.toLowerCase()) {
-                        case "clear":
-                            player.setPlayerWeather(WeatherType.CLEAR);
-                            player.sendMessage(format("messages.weather.clear"));
-                            break;
-                        case "rain":
-                            player.setPlayerWeather(WeatherType.DOWNFALL);
-                            player.sendMessage(format("messages.weather.rain"));
-                            break;
-                        case "reset":
-                            player.resetPlayerWeather();
-                            player.sendMessage(format("messages.weather.reset"));
-                            break;
-                        default:
-                            return false;
-                    }
-
-                    break;
+                    return setPlayerWeather(player, subCommand);
             }
         } else {
             sender.sendMessage(format("messages.errors.non-player"));
+        }
+        
+        return true;
+    }
+
+    private boolean setPlayerTime(Player player, String time) {
+        switch (time.toLowerCase()) {
+            case "day":
+                player.setPlayerTime(1000L, false);
+                player.sendMessage(format("messages.time.day"));
+                break;
+            case "night":
+                player.setPlayerTime(13000L, false);
+                player.sendMessage(format("messages.time.night"));
+                break;
+            case "reset":
+                player.resetPlayerTime();
+                player.sendMessage(format("messages.time.reset"));
+                break;
+            default:
+                return false;
+        }
+        
+        return true;
+    }
+
+    private boolean setPlayerWeather(Player player, String weather) {
+        switch (weather.toLowerCase()) {
+            case "clear":
+                player.setPlayerWeather(WeatherType.CLEAR);
+                player.sendMessage(format("messages.weather.clear"));
+                break;
+            case "rain":
+                player.setPlayerWeather(WeatherType.DOWNFALL);
+                player.sendMessage(format("messages.weather.rain"));
+                break;
+            case "reset":
+                player.resetPlayerWeather();
+                player.sendMessage(format("messages.weather.reset"));
+                break;
+            default:
+                return false;
         }
         
         return true;
